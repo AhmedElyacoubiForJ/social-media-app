@@ -6,7 +6,6 @@ const Login = () => {
   const navigate = useNavigate();
   const signInWithGoogle = async () => {
     const result = await signInWithPopup(auth, googleProvider);
-    console.log(result);
     navigate("/");
   };
 
