@@ -46,3 +46,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### `npm install react-hook-form yup @hookform/resolvers`
+
+## writin rules in firestore
+allow write, delete, update: if request.auth != null && request.auth.uid == request.resource.data.userId;
+allow read: if request.auth != null;
+  
