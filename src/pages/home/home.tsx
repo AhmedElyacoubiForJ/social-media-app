@@ -1,8 +1,9 @@
 import { getDocs, collection } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import { db } from "../config/firebase";
+import { db } from "../../config/firebase";
+import Post from "./post";
 
-interface Post {
+export interface Post {
   id: string;
   title: string;
   description: string;
@@ -30,20 +31,21 @@ const Home = () => {
   }, []);
 
   return (
-  <div>
-    <h1>Home Page</h1>
-    {postsList &&
-      postsList.map((post) => (
-        <div key={post.id}>
+    <div>
+      <h1>Home Page</h1>
+      {postsList && postsList.map((post) => <Post key={post.id} post={post}/>)}
+    </div>
+  );
+};
+
+export default Home;
+
+{
+  /* <div key={post.id}>
           <h2>Title: {post.title}</h2>
           <p>Post ID: {post.id}</p>
           <p>Description: {post.description}</p>
           <p>User Name: {post.username}</p>
           <p>User ID: {post.userId}</p>
-        </div>
-      ))}
-  </div>
-);
-};
-
-export default Home;
+        </div> */
+}
