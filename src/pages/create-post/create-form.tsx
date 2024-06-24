@@ -40,7 +40,7 @@ export const CreateForm = () => {
     });
     navigate("/");
   };
-  
+
   return (
     <form onSubmit={handleSubmit(onCreatePost)}>
       <input placeholder="Title..." {...register("title")} />
